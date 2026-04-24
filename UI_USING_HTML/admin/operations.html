@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMS Operations</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+<div class="app-shell">
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <span class="role-chip">Admin Workspace</span>
+            <h1>Operations</h1>
+            <p>Attendance, fees, marks, reports, and meetings in one execution-focused area.</p>
+        </div>
+
+        <nav class="nav-group">
+            <span class="nav-label">Admin</span>
+            <a class="nav-link" href="dashboard.html">Dashboard</a>
+            <a class="nav-link" href="students.html">Students</a>
+            <a class="nav-link" href="academics.html">Academics</a>
+            <a class="nav-link" href="operations.html">Operations</a>
+            <a class="nav-link" href="../meetings.html">Meetings</a>
+        </nav>
+
+        <nav class="nav-group">
+            <span class="nav-label">Role Views</span>
+            <a class="nav-link" href="../teacher/workspace.html">Teacher View</a>
+            <a class="nav-link" href="../student/portal.html">Student View</a>
+            <a class="nav-link" href="../index.html">Entry Screen</a>
+        </nav>
+    </aside>
+
+    <div class="app-content">
+        <header class="topbar">
+            <div class="topbar-left">
+                <button class="button-quiet mobile-only" type="button" data-sidebar-toggle>Menu</button>
+                <div>
+                    <h2>Operations</h2>
+                    <span class="muted">High-frequency workflows grouped for speed</span>
+                </div>
+            </div>
+            <div class="topbar-right">
+                <div class="search-wrap">
+                    <input class="search-input" type="search" placeholder="Search fees, marks, attendance, meetings">
+                </div>
+                <div class="topbar-user">
+                    <strong data-current-user>Authenticated User</strong>
+                    <span data-current-role>Role</span>
+                </div>
+                <button class="button-quiet" type="button" data-logout>Log Out</button>
+            </div>
+        </header>
+
+        <main class="content-wrap">
+            <section class="page-header">
+                <div>
+                    <h3>Attendance, finance, marks, reports, and meetings</h3>
+                    <p>This page demonstrates the operations zone the plan called for, with separate sections for each high-frequency module.</p>
+                </div>
+                <div class="toolbar-actions">
+                    <a class="button" href="../meetings.html">Meetings Center</a>
+                    <a class="button-secondary" href="students.html">Student Records</a>
+                    <a class="button-secondary" href="academics.html">Academic Setup</a>
+                </div>
+            </section>
+
+            <section class="section-grid">
+                <article class="page-panel">
+                    <span class="section-kicker">Attendance</span>
+                    <h4 class="page-panel-title">Daily teaching queue</h4>
+                    <div class="table-wrap">
+                        <table class="data-table">
+                            <thead>
+                            <tr>
+                                <th>Student</th>
+                                <th>Student ID</th>
+                                <th>Date</th>
+                                <th>Status</th>
+                            </tr>
+                            </thead>
+                            <tbody id="attendance-table"></tbody>
+                        </table>
+                    </div>
+                </article>
+
+                <article class="page-panel">
+                    <span class="section-kicker">Fees</span>
+                    <h4 class="page-panel-title">Payment status summary</h4>
+                    <div class="mini-grid">
+                        <article class="mini-card">
+                            <h4>Paid Count</h4>
+                            <p class="strong" id="paid-count">0</p>
+                            <p class="muted">Current fee records marked paid.</p>
+                        </article>
+                        <article class="mini-card">
+                            <h4>Pending Count</h4>
+                            <p class="strong" id="pending-count">0</p>
+                            <p class="muted">Pending items for follow-up.</p>
+                        </article>
+                        <article class="mini-card">
+                            <h4>Paid Amount</h4>
+                            <p class="strong" id="paid-amount">INR 0</p>
+                            <p class="muted">Collected across visible records.</p>
+                        </article>
+                        <article class="mini-card">
+                            <h4>Pending Amount</h4>
+                            <p class="strong" id="pending-amount">INR 0</p>
+                            <p class="muted">Still waiting to be cleared.</p>
+                        </article>
+                    </div>
+                </article>
+            </section>
+
+            <section class="panel-grid">
+                <article class="page-panel scroll">
+                    <span class="section-kicker">Marks</span>
+                    <h4 class="page-panel-title">Recent mark entries</h4>
+                    <div class="table-wrap">
+                        <table class="data-table">
+                            <thead>
+                            <tr>
+                                <th>Student</th>
+                                <th>Subject</th>
+                                <th>Exam Type</th>
+                                <th>Score</th>
+                                <th>Grade</th>
+                            </tr>
+                            </thead>
+                            <tbody id="marks-table"></tbody>
+                        </table>
+                    </div>
+                </article>
+
+                <article class="page-panel">
+                    <span class="section-kicker">Reports and meetings</span>
+                    <h4 class="page-panel-title">Distribution hub</h4>
+                    <div class="list-stack" id="meetings-ops"></div>
+                </article>
+            </section>
+        </main>
+    </div>
+</div>
+<script src="../assets/js/app.js"></script>
+<script type="module" src="../assets/js/admin-operations.js"></script>
+</body>
+</html>

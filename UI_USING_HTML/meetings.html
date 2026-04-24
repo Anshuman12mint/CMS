@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMS Meetings</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+<div class="app-shell">
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <span class="role-chip">Meetings Center</span>
+            <h1>Live Sessions</h1>
+            <p>Open meetings, join rooms, follow participants, and chat from the same workspace.</p>
+        </div>
+
+        <nav class="nav-group">
+            <span class="nav-label">Navigation</span>
+            <a class="nav-link" data-home-link href="index.html">Back To Workspace</a>
+            <a class="nav-link" href="meetings.html">Meetings</a>
+            <a class="nav-link" href="index.html">Login</a>
+        </nav>
+
+        <div class="sidebar-note">
+            <strong id="meeting-role">Role</strong>
+            <p id="meeting-role-note">Sign in to load visible meetings.</p>
+        </div>
+    </aside>
+
+    <div class="app-content">
+        <header class="topbar">
+            <div class="topbar-left">
+                <button class="button-quiet mobile-only" type="button" data-sidebar-toggle>Menu</button>
+                <div>
+                    <h2>Meeting Center</h2>
+                    <span class="muted">Join, open room, chat, and manage sessions</span>
+                </div>
+            </div>
+            <div class="topbar-right">
+                <div class="topbar-user">
+                    <strong data-current-user>Authenticated User</strong>
+                    <span data-current-role>Role</span>
+                </div>
+                <button class="button-quiet" type="button" data-logout>Log Out</button>
+            </div>
+        </header>
+
+        <main class="content-wrap">
+            <section class="page-header">
+                <div>
+                    <h3>Meetings, participation, and chat</h3>
+                    <p data-page-description>The selected meeting loads live detail, participants, and message history from the backend.</p>
+                </div>
+                <div class="toolbar-actions">
+                    <a class="button-secondary" data-home-link href="index.html">Workspace</a>
+                </div>
+            </section>
+
+            <section class="meeting-layout">
+                <div class="meeting-column">
+                    <article class="page-panel">
+                        <span class="section-kicker">Available meetings</span>
+                        <h4 class="page-panel-title">Visible sessions</h4>
+                        <div class="meeting-list" id="meeting-list"></div>
+                    </article>
+
+                    <article class="page-panel hidden" id="create-panel">
+                        <span class="section-kicker">Create meeting</span>
+                        <h4 class="page-panel-title">New room</h4>
+                        <form class="field-grid" id="create-meeting-form">
+                            <div class="field">
+                                <label for="meeting-title">Title</label>
+                                <input id="meeting-title" type="text" placeholder="Faculty review sync" required>
+                            </div>
+                            <div class="field">
+                                <label for="meeting-description">Description</label>
+                                <textarea id="meeting-description" placeholder="Agenda or notes"></textarea>
+                            </div>
+                            <div class="field">
+                                <label for="meeting-course">Audience Course</label>
+                                <select id="meeting-course"></select>
+                            </div>
+                            <div class="field-grid two">
+                                <div class="field">
+                                    <label for="meeting-start">Start</label>
+                                    <input id="meeting-start" type="datetime-local" required>
+                                </div>
+                                <div class="field">
+                                    <label for="meeting-end">End</label>
+                                    <input id="meeting-end" type="datetime-local">
+                                </div>
+                            </div>
+                            <div class="button-row">
+                                <button class="button" type="submit">Create Meeting</button>
+                            </div>
+                            <div id="create-status" class="status-banner info compact">Use this form to create an open or course-specific meeting.</div>
+                        </form>
+                    </article>
+                </div>
+
+                <div class="meeting-column">
+                    <article class="page-panel" id="meeting-detail"></article>
+
+                    <article class="page-panel chat-panel">
+                        <div>
+                            <span class="section-kicker">Chat</span>
+                            <h4 class="page-panel-title">Meeting messages</h4>
+                        </div>
+                        <div class="chat-list" id="meeting-messages"></div>
+                        <form class="field-grid" id="chat-form">
+                            <div class="field">
+                                <label for="message-text">Send a message</label>
+                                <textarea id="message-text" placeholder="Type your message to the room"></textarea>
+                            </div>
+                            <div class="button-row">
+                                <button class="button" type="submit">Send Message</button>
+                            </div>
+                            <div id="chat-status" class="status-banner info compact">Select a meeting and use the chat panel after joining.</div>
+                        </form>
+                    </article>
+                </div>
+            </section>
+        </main>
+    </div>
+</div>
+<script src="assets/js/app.js"></script>
+<script type="module" src="assets/js/meetings.js"></script>
+</body>
+</html>

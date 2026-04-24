@@ -1,0 +1,12 @@
+INFO:     127.0.0.1:62519 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62521 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62525 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62525 - "GET /api/meetings HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62526 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62526 - "POST /api/meetings HTTP/1.1" 201 Created
+INFO:     127.0.0.1:62527 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62527 - "POST /api/meetings/1/join HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62527 - "POST /api/meetings/1/messages HTTP/1.1" 201 Created
+INFO:     127.0.0.1:57583 - "POST /api/auth/login HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57583 - "GET /api/meetings HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57583 - "GET /api/meetings/1/messages HTTP/1.1" 200 OK

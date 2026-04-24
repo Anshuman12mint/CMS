@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMS Login</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="login-page">
+<main class="login-shell">
+    <section class="auth-panel">
+        <div>
+            <div class="brand-lockup">
+                <div class="brand-meta">
+                    <span class="role-chip">UI_USING_HTML</span>
+                    <span class="tag">Live Backend</span>
+                    <span class="tag">Meetings Enabled</span>
+                </div>
+                <h1 class="brand-name">College Management System</h1>
+                <p class="auth-copy muted">
+                    Sign in against the FastAPI backend and the UI will route you into the right workspace.
+                    Admin and staff use the operational shell, teachers get their subject and meeting view,
+                    and students get a portal for attendance, fees, marks, and meetings.
+                </p>
+            </div>
+
+            <div id="active-session"></div>
+
+            <form class="auth-form" id="login-form">
+                <div class="field-grid">
+                    <div class="field">
+                        <label for="username">Username</label>
+                        <input id="username" type="text" value="admin" placeholder="Enter username">
+                    </div>
+                    <div class="field">
+                        <label for="password">Password</label>
+                        <input id="password" type="password" value="admin123" placeholder="Enter password">
+                    </div>
+                </div>
+
+                <div class="field-grid">
+                    <div class="field">
+                        <label for="api-base">Backend Base URL</label>
+                        <input id="api-base" type="url" value="http://localhost:8000" placeholder="http://localhost:8000">
+                    </div>
+                </div>
+
+                <div class="notice-strip">
+                    <div>
+                        <strong>Sample users</strong>
+                        <span class="muted">Click any sample account to autofill the login form.</span>
+                    </div>
+                    <span class="status-badge info">Bootstrap Data</span>
+                </div>
+
+                <div id="sample-users" class="credential-grid"></div>
+
+                <div class="button-row">
+                    <button class="button" type="submit">Sign In</button>
+                    <a class="button-secondary" href="meetings.html">Open Meetings View</a>
+                </div>
+
+                <div id="login-status" class="status-banner info">Use the backend URL above and sign in to load live data.</div>
+            </form>
+        </div>
+
+        <div class="footer-note">
+            <strong>Default bootstrap accounts:</strong> `admin/admin123`, `rajesh/teacher123`, `rohit/student123`, `anjali/student123`
+        </div>
+    </section>
+
+    <aside class="auth-aside">
+        <span class="section-kicker">Live Structure</span>
+        <h2 class="section-title">Role-based workspaces with meeting join and chat</h2>
+        <p class="muted">
+            This HTML UI now reads from the backend instead of fixed mock data. Meetings have their own
+            working center with join, open-room, participant list, and chat messages.
+        </p>
+
+        <div class="overview-grid">
+            <section class="overview-panel">
+                <span class="section-kicker">Admin</span>
+                <h3 class="page-panel-title">Operations Shell</h3>
+                <div class="list-stack">
+                    <article class="list-item">
+                        <div class="list-item-header">
+                            <h4>Dashboard</h4>
+                            <span class="status-badge success">Live Data</span>
+                        </div>
+                        <p>Loads summary totals, recent admissions, fee summary, and visible meetings.</p>
+                    </article>
+                    <article class="list-item">
+                        <div class="list-item-header">
+                            <h4>Students</h4>
+                            <span class="status-badge success">Live Data</span>
+                        </div>
+                        <p>Loads records from the students, attendance, fees, and marks endpoints.</p>
+                    </article>
+                    <article class="list-item">
+                        <div class="list-item-header">
+                            <h4>Meetings</h4>
+                            <span class="status-badge success">Join + Chat</span>
+                        </div>
+                        <p>Admins, staff, and teachers can create meetings, then join and chat in the shared room UI.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="overview-panel">
+                <span class="section-kicker">Teacher and Student</span>
+                <h3 class="page-panel-title">Personal Workspaces</h3>
+                <div class="list-stack">
+                    <article class="list-item">
+                        <div class="list-item-header">
+                            <h4>Teacher Workspace</h4>
+                            <span class="status-badge success">Live Data</span>
+                        </div>
+                        <p>Loads assigned courses, subjects, marks, and meeting access for the logged-in teacher.</p>
+                    </article>
+                    <article class="list-item">
+                        <div class="list-item-header">
+                            <h4>Student Portal</h4>
+                            <span class="status-badge success">Live Data</span>
+                        </div>
+                        <p>Loads linked student attendance, fees, marks, and meetings from the backend.</p>
+                    </article>
+                </div>
+            </section>
+        </div>
+
+        <section class="page-panel">
+            <span class="section-kicker">Operational Note</span>
+            <div class="mini-grid">
+                <article class="mini-card">
+                    <h4>Run the backend</h4>
+                    <p class="muted">The login form expects the FastAPI app to be available at the configured base URL.</p>
+                </article>
+                <article class="mini-card">
+                    <h4>Serve the UI</h4>
+                    <p class="muted">Use a local static server rather than opening these files directly so browser fetch works cleanly.</p>
+                </article>
+                <article class="mini-card">
+                    <h4>Meetings page</h4>
+                    <p class="muted">The meetings center supports list, detail, join, open room, leave, end, and chat messages.</p>
+                </article>
+                <article class="mini-card">
+                    <h4>Role routing</h4>
+                    <p class="muted">After login the UI redirects automatically based on the role returned by the backend.</p>
+                </article>
+            </div>
+        </section>
+    </aside>
+</main>
+<script type="module" src="assets/js/index.js"></script>
+</body>
+</html>

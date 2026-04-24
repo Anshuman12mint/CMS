@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMS Academic Setup</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+<div class="app-shell">
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <span class="role-chip">Admin Workspace</span>
+            <h1>Academic Setup</h1>
+            <p>Course and subject structure that teachers, students, marks, and reports depend on.</p>
+        </div>
+
+        <nav class="nav-group">
+            <span class="nav-label">Admin</span>
+            <a class="nav-link" href="dashboard.html">Dashboard</a>
+            <a class="nav-link" href="students.html">Students</a>
+            <a class="nav-link" href="academics.html">Academics</a>
+            <a class="nav-link" href="operations.html">Operations</a>
+            <a class="nav-link" href="../meetings.html">Meetings</a>
+        </nav>
+
+        <nav class="nav-group">
+            <span class="nav-label">Role Views</span>
+            <a class="nav-link" href="../teacher/workspace.html">Teacher View</a>
+            <a class="nav-link" href="../student/portal.html">Student View</a>
+            <a class="nav-link" href="../index.html">Entry Screen</a>
+        </nav>
+    </aside>
+
+    <div class="app-content">
+        <header class="topbar">
+            <div class="topbar-left">
+                <button class="button-quiet mobile-only" type="button" data-sidebar-toggle>Menu</button>
+                <div>
+                    <h2>Academics</h2>
+                    <span class="muted">Courses and subjects in one operational view</span>
+                </div>
+            </div>
+            <div class="topbar-right">
+                <div class="search-wrap">
+                    <input class="search-input" type="search" placeholder="Search courses or subjects">
+                </div>
+                <div class="topbar-user">
+                    <strong data-current-user>Authenticated User</strong>
+                    <span data-current-role>Role</span>
+                </div>
+                <button class="button-quiet" type="button" data-logout>Log Out</button>
+            </div>
+        </header>
+
+        <main class="content-wrap">
+            <section class="page-header">
+                <div>
+                    <h3>Courses and subjects</h3>
+                    <p>This screen follows the planned combined academic setup area so subject management stays close to its parent course structure.</p>
+                </div>
+                <div class="toolbar-actions">
+                    <a class="button" href="operations.html">Open Operations</a>
+                    <a class="button-secondary" href="../meetings.html">Meetings</a>
+                </div>
+            </section>
+
+            <section class="panel-grid">
+                <article class="page-panel scroll">
+                    <div class="toolbar">
+                        <div>
+                            <span class="section-kicker">Courses</span>
+                            <h4 class="page-panel-title">Academic programs</h4>
+                        </div>
+                        <span class="status-badge info"><span id="course-count">0</span> active</span>
+                    </div>
+                    <div class="table-wrap">
+                        <table class="data-table">
+                            <thead>
+                            <tr>
+                                <th>Code</th>
+                                <th>Course Name</th>
+                                <th>Description</th>
+                                <th>Action</th>
+                            </tr>
+                            </thead>
+                            <tbody id="courses-table"></tbody>
+                        </table>
+                    </div>
+                </article>
+
+                <article class="page-panel scroll">
+                    <div class="toolbar">
+                        <div>
+                            <span class="section-kicker">Subjects</span>
+                            <h4 class="page-panel-title" id="subject-heading">Subjects</h4>
+                        </div>
+                        <span class="status-badge success">By Course</span>
+                    </div>
+                    <div class="table-wrap">
+                        <table class="data-table">
+                            <thead>
+                            <tr>
+                                <th>Subject Code</th>
+                                <th>Subject Name</th>
+                                <th>Course</th>
+                                <th>Description</th>
+                            </tr>
+                            </thead>
+                            <tbody id="subjects-table"></tbody>
+                        </table>
+                    </div>
+                </article>
+            </section>
+
+            <section class="section-grid">
+                <article class="page-panel">
+                    <span class="section-kicker">Assignment readiness</span>
+                    <h4 class="page-panel-title">What this page should power next</h4>
+                    <div class="list-stack">
+                        <article class="list-item">
+                            <div class="list-item-header">
+                                <h4>Teacher subject mapping</h4>
+                                <span class="status-badge info">Needed</span>
+                            </div>
+                            <p>Feed the teacher workspace with assigned subjects and course visibility.</p>
+                        </article>
+                        <article class="list-item">
+                            <div class="list-item-header">
+                                <h4>Marks entry routing</h4>
+                                <span class="status-badge info">Needed</span>
+                            </div>
+                            <p>Use course and subject relations to narrow marks and attendance workflows.</p>
+                        </article>
+                    </div>
+                </article>
+
+                <article class="page-panel">
+                    <span class="section-kicker">Form concept</span>
+                    <h4 class="page-panel-title">Integration note</h4>
+                    <div class="field-grid">
+                        <p class="muted">
+                            This screen now reads live course and subject records from the backend. The next useful step would be
+                            wiring create and update forms into the `courses` and `subjects` endpoints.
+                        </p>
+                    </div>
+                </article>
+            </section>
+        </main>
+    </div>
+</div>
+<script src="../assets/js/app.js"></script>
+<script type="module" src="../assets/js/admin-academics.js"></script>
+</body>
+</html>

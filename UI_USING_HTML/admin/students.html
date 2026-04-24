@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMS Student Management</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+<div class="app-shell">
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <span class="role-chip">Admin Workspace</span>
+            <h1>Student Center</h1>
+            <p>Records, admissions, guardian details, and linked academic activity.</p>
+        </div>
+
+        <nav class="nav-group">
+            <span class="nav-label">Admin</span>
+            <a class="nav-link" href="dashboard.html">Dashboard</a>
+            <a class="nav-link" href="students.html">Students</a>
+            <a class="nav-link" href="academics.html">Academics</a>
+            <a class="nav-link" href="operations.html">Operations</a>
+            <a class="nav-link" href="../meetings.html">Meetings</a>
+        </nav>
+
+        <nav class="nav-group">
+            <span class="nav-label">Role Views</span>
+            <a class="nav-link" href="../teacher/workspace.html">Teacher View</a>
+            <a class="nav-link" href="../student/portal.html">Student View</a>
+            <a class="nav-link" href="../index.html">Entry Screen</a>
+        </nav>
+    </aside>
+
+    <div class="app-content">
+        <header class="topbar">
+            <div class="topbar-left">
+                <button class="button-quiet mobile-only" type="button" data-sidebar-toggle>Menu</button>
+                <div>
+                    <h2>Students</h2>
+                    <span class="muted">Current roster and intake workflow</span>
+                </div>
+            </div>
+            <div class="topbar-right">
+                <div class="search-wrap">
+                    <input class="search-input" id="student-search" type="search" placeholder="Search by student name, id, course">
+                </div>
+                <div class="topbar-user">
+                    <strong data-current-user>Authenticated User</strong>
+                    <span data-current-role>Role</span>
+                </div>
+                <button class="button-quiet" type="button" data-logout>Log Out</button>
+            </div>
+        </header>
+
+        <main class="content-wrap">
+            <section class="page-header">
+                <div>
+                    <h3>Student management</h3>
+                    <p>This layout combines list management with a detail panel so attendance, fees, and marks stay close to the student profile.</p>
+                </div>
+                <div class="toolbar-actions">
+                    <a class="button" href="dashboard.html">Dashboard</a>
+                    <a class="button-secondary" href="operations.html">Operations</a>
+                    <a class="button-secondary" href="../meetings.html">Meetings</a>
+                </div>
+            </section>
+
+            <section class="page-panel filter-panel">
+                <span class="section-kicker">Filters</span>
+                <h4 class="page-panel-title">Refine roster view</h4>
+                <div class="field-grid two">
+                    <div class="field">
+                        <label for="course-filter">Course</label>
+                        <select id="course-filter"></select>
+                    </div>
+                </div>
+            </section>
+
+            <section class="split-layout">
+                <article class="page-panel scroll">
+                    <div class="toolbar">
+                        <div>
+                            <span class="section-kicker">Roster</span>
+                            <h4 class="page-panel-title">Active students</h4>
+                        </div>
+                        <span class="status-badge info">1,284 total</span>
+                    </div>
+                    <div class="table-wrap">
+                        <table class="data-table">
+                            <thead>
+                            <tr>
+                                <th>Student</th>
+                                <th>Course</th>
+                                <th>Guardian</th>
+                                <th>Admission</th>
+                                <th>Fees</th>
+                                <th>Attendance</th>
+                            </tr>
+                            </thead>
+                            <tbody id="students-table"></tbody>
+                        </table>
+                    </div>
+                </article>
+
+                <aside class="detail-panel" id="student-detail"></aside>
+            </section>
+        </main>
+    </div>
+</div>
+<script src="../assets/js/app.js"></script>
+<script type="module" src="../assets/js/admin-students.js"></script>
+</body>
+</html>

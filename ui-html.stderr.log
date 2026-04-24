@@ -1,0 +1,4 @@
+::1 - - [24/Apr/2026 10:31:52] "GET /index.html HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [24/Apr/2026 10:31:56] "GET /index.html HTTP/1.1" 200 -
+::ffff:127.0.0.1 - - [24/Apr/2026 10:31:59] "HEAD /index.html HTTP/1.1" 200 -
+^C

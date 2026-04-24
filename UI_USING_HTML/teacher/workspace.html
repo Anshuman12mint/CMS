@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CMS Teacher Workspace</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+<div class="app-shell">
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <span class="role-chip">Teacher Workspace</span>
+            <h1>Faculty Flow</h1>
+            <p>Course ownership, subject responsibility, attendance, marks, and meetings.</p>
+        </div>
+
+        <nav class="nav-group">
+            <span class="nav-label">Role View</span>
+            <a class="nav-link" href="workspace.html">Teacher Dashboard</a>
+            <a class="nav-link" href="../meetings.html">Meetings</a>
+            <a class="nav-link" href="../admin/dashboard.html">Admin View</a>
+            <a class="nav-link" href="../student/portal.html">Student View</a>
+            <a class="nav-link" href="../index.html">Entry Screen</a>
+        </nav>
+
+        <div class="sidebar-note">
+            This layout matches the backend teacher dashboard concept: courses, subjects, student counts, meetings, and fast actions.
+        </div>
+    </aside>
+
+    <div class="app-content">
+        <header class="topbar">
+            <div class="topbar-left">
+                <button class="button-quiet mobile-only" type="button" data-sidebar-toggle>Menu</button>
+                <div>
+                    <h2>Teacher Workspace</h2>
+                    <span class="muted">Designed for high-frequency class workflows</span>
+                </div>
+            </div>
+            <div class="topbar-right">
+                <div class="search-wrap">
+                    <input class="search-input" type="search" placeholder="Search class, subject, student">
+                </div>
+                <div class="topbar-user">
+                    <strong data-current-user>Authenticated User</strong>
+                    <span data-current-role>Role</span>
+                </div>
+                <button class="button-quiet" type="button" data-logout>Log Out</button>
+            </div>
+        </header>
+
+        <main class="content-wrap" id="teacher-main"></main>
+    </div>
+</div>
+<script src="../assets/js/app.js"></script>
+<script type="module" src="../assets/js/teacher-workspace.js"></script>
+</body>
+</html>
